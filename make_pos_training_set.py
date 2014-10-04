@@ -2,7 +2,9 @@ from cltk.corpus.classical_greek.beta_to_unicode import Replacer
 from lxml import etree
 import os
 
+
 r = Replacer()
+
 
 def get_files():
     files = os.listdir('treebank_perseus_greek')
@@ -14,7 +16,7 @@ def get_files():
 
 
 def get_tags(xml_files_list):
-    alpheios_training_set = []
+    treebank_training_set = []
     for xml_file in xml_files_list:
         with open('treebank_perseus_greek/' + xml_file) as f:
             xml_string = f.read()
@@ -40,15 +42,17 @@ def get_tags(xml_files_list):
             tagged_sentence = ' '.join(sentence_list)
             sentences_list.append(tagged_sentence)
         tagged_sentences = '\n\n'.join(sentences_list)
-        alpheios_training_set.append(tagged_sentences)
-    pos_training_set = '\n\n'.join(alpheios_training_set)
+        treebank_training_set.append(tagged_sentences)
+    pos_training_set = '\n\n'.join(treebank_training_set)
 
-    with open('alpheios_pos_training_set.txt', 'w') as f:
+    with open('pos_training_set.txt', 'w') as f:
         f.write(pos_training_set)
+
 
 def main():
     files = get_files()
     get_tags(files)
+
 
 if __name__ == "__main__":
     main()
