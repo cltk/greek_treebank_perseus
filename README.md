@@ -1,6 +1,19 @@
-This is a README file for the Ancient Greek Dependency Treebank, version 1.7.
+# About
+
+This repository contains treebanks for Ancient Greek from the [Ancient Greek Dependency Treebank, version 1.7](http://nlp.perseus.tufts.edu/syntax/treebank/).
+
+The file `make_pos_training_set.py` generates the training set `pos_training_set.txt`, which encodes part of speech data like so:
+
+``` python
+- κάτοιδα/v1sria--- νυκτέρων/a-p---ng- ὁμήγυριν/n-s---fa- ,/u-------- καὶ/c-------- τοὺς/l-p---ma- φέροντας/t-pppama- χεῖμα/n-s---na- καὶ/c-------- θέρος/n-s---na- βροτοῖς/n-p---md- λαμπροὺς/a-p---ma- δυνάστας/n-p---ma- ,/--------- ἐμπρέποντας/t-pppama- αἰθέρι/n-s---md- [ἀστέρας/n-p---ma- ,/--------- ὅταν/c-------- φθίνωσιν/v3ppsa--- ,/--------- ἀντολάς/n-p---fa- τε/g-------- τῶν]/p-p---mg- ./---------
+```
+
+`pos_training_set.txt` is made for the purpose of being used with NLTK's `TaggedCorpusReader`.
 
 
+# License
+
+```
 1. Preamble
 
 	1.1 Source
@@ -249,6 +262,5 @@ This is a README file for the Ancient Greek Dependency Treebank, version 1.7.
 		Nord, Anthony D. Yates, Sam Zukoff and the Tufts University LAT-181 class 
 		(Spring 2008).
 
-		
-		
+```
 
