@@ -10,6 +10,74 @@ The file `make_pos_training_set.py` generates the training set `pos_training_set
 
 `pos_training_set.txt` is made for the purpose of being used with NLTK's `TaggedCorpusReader`.
 
+Example custom training:
+``` python
+In [1]: from nltk.corpus.reader import TaggedCorpusReader
+
+In [2]: from nltk.tag import UnigramTagger
+
+In [3]: from nltk.tokenize import wordpunct_tokenize
+
+In [4]: reader = TaggedCorpusReader('.', r'.*\.pos')
+
+In [5]: train_sents = reader.tagged_sents()
+
+In [6]: tagger = UnigramTagger(train_sents)
+
+In [7]: untagged_text = """θεοὺς μὲν αἰτῶ τῶνδ᾽ ἀπαλλαγὴν πόνων φρουρᾶς ἐτείας μῆκος, ἣν κοιμώμενος στέγαις Ἀτρειδῶν ἄγκαθεν, κυνὸς δίκην, ἄστρων κάτοιδα νυκτέρων ὁμήγυριν, καὶ τοὺς φέροντας χεῖμα καὶ θέρος βροτοῖς λαμπροὺς δυνάστας, ἐμπρέποντας αἰθέρι ἀστέρας, ὅταν φθίνωσιν, ἀντολάς τε τῶν."""
+
+In [8]: untagged_tokens = wordpunct_tokenize(untagged_text)
+
+In [9]: tagger.tag(untagged_tokens)
+Out[9]: 
+[('θεοὺς', 'N-P---MA-'),
+ ('μὲν', 'G--------'),
+ ('αἰτῶ', 'V1SPIA---'),
+ ('τῶνδ', None),
+ ('᾽', None),
+ ('ἀπαλλαγὴν', 'N-S---FA-'),
+ ('πόνων', 'N-P---MG-'),
+ ('φρουρᾶς', 'N-S---FG-'),
+ ('ἐτείας', 'A-S---FG-'),
+ ('μῆκος', 'N-S---NA-'),
+ (',', 'U--------'),
+ ('ἣν', 'P-S---FA-'),
+ ('κοιμώμενος', 'T-SPPEMN-'),
+ ('στέγαις', 'N-P---FD-'),
+ ('Ἀτρειδῶν', 'N-P---MG-'),
+ ('ἄγκαθεν', 'D--------'),
+ (',', 'U--------'),
+ ('κυνὸς', 'N-S---FG-'),
+ ('δίκην', 'N-S---FA-'),
+ (',', 'U--------'),
+ ('ἄστρων', 'N-P---NG-'),
+ ('κάτοιδα', 'V1SRIA---'),
+ ('νυκτέρων', 'A-P---NG-'),
+ ('ὁμήγυριν', 'N-S---FA-'),
+ (',', 'U--------'),
+ ('καὶ', 'C--------'),
+ ('τοὺς', 'P-P---MA-'),
+ ('φέροντας', 'T-PPPAMA-'),
+ ('χεῖμα', 'N-S---NA-'),
+ ('καὶ', 'C--------'),
+ ('θέρος', 'N-S---NA-'),
+ ('βροτοῖς', 'N-P---MD-'),
+ ('λαμπροὺς', 'A-P---MA-'),
+ ('δυνάστας', 'N-P---MA-'),
+ (',', 'U--------'),
+ ('ἐμπρέποντας', 'T-PPPAMA-'),
+ ('αἰθέρι', 'N-S---MD-'),
+ ('ἀστέρας', None),
+ (',', 'U--------'),
+ ('ὅταν', 'C--------'),
+ ('φθίνωσιν', 'V3PPSA---'),
+ (',', 'U--------'),
+ ('ἀντολάς', 'N-P---FA-'),
+ ('τε', 'G--------'),
+ ('τῶν', 'L-P---MG-'),
+ ('.', 'U--------')]
+
+```
 
 # License
 
