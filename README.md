@@ -77,6 +77,8 @@ Out[9]:
  ('τῶν', 'L-P---MG-'),
  ('.', 'U--------')]
 
+In [10]: tagger.evaluate(train_sents)
+Out[10]: 0.9196123340065213
 ```
 
 # License

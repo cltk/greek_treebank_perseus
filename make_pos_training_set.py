@@ -3,6 +3,10 @@ from lxml import etree
 import os
 
 
+__author__ = ['Kyle P. Johnson <kyle@kyle-p-johnson.com>', 'Stephen Margheim <stephen.margheim@gmail.com>']
+__license__ = 'MIT License. See LICENSE.'
+
+
 r = Replacer()
 
 
