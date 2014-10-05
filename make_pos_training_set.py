@@ -7,25 +7,27 @@ r = Replacer()
 
 
 def get_files():
+    """Return a Generator of the Perseus Greek Treebank XML files
+    
+    """
     files = os.listdir('treebank_perseus_greek')
-    xml_files_list = []
     for file in files:
-        if file[-4:] == '.xml':
-            xml_files_list.append(file)
-    return xml_files_list
+        if file.endswith('.xml'):
+            yield file
 
 
-def get_tags(xml_files_list):
+def get_tags():
     treebank_training_set = []
-    for xml_file in xml_files_list:
-        with open('treebank_perseus_greek/' + xml_file) as f:
+    for xml_file in get_files():
+        file_path = os.path.join('treebank_perseus_greek/', xml_file)
+        with open(file_path, 'r') as f:
             xml_string = f.read()
         root = etree.fromstring(xml_string)
-        sentences = root.findall("sentence")
+        sentences = root.findall('sentence')
 
         sentences_list = []
         for sentence in sentences:  # note: sentence is Element
-            words_list = sentence.findall("word")
+            words_list = sentence.findall('word')
             sentence_list = []
             for x in words_list:  #note: word is class
                 word = x.attrib
@@ -37,7 +39,7 @@ def get_tags(xml_files_list):
                 except IndexError:
                     pass
                 postag = word['postag']  # note: postag is str
-                word_tag = uni_form + '/' + postag
+                word_tag = '/'.join([uni_form, postag])
                 sentence_list.append(word_tag)
             tagged_sentence = ' '.join(sentence_list)
             sentences_list.append(tagged_sentence)
@@ -50,8 +52,7 @@ def get_tags(xml_files_list):
 
 
 def main():
-    files = get_files()
-    get_tags(files)
+    get_tags()
 
 
 if __name__ == "__main__":
