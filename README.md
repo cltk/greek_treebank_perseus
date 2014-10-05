@@ -5,7 +5,7 @@ This repository contains treebanks for Ancient Greek from the [Ancient Greek Dep
 The file `make_pos_training_set.py` generates the training set `pos_training_set.txt`, which encodes part of speech data like so:
 
 ``` python
-- κάτοιδα/v1sria--- νυκτέρων/a-p---ng- ὁμήγυριν/n-s---fa- ,/u-------- καὶ/c-------- τοὺς/l-p---ma- φέροντας/t-pppama- χεῖμα/n-s---na- καὶ/c-------- θέρος/n-s---na- βροτοῖς/n-p---md- λαμπροὺς/a-p---ma- δυνάστας/n-p---ma- ,/--------- ἐμπρέποντας/t-pppama- αἰθέρι/n-s---md- [ἀστέρας/n-p---ma- ,/--------- ὅταν/c-------- φθίνωσιν/v3ppsa--- ,/--------- ἀντολάς/n-p---fa- τε/g-------- τῶν]/p-p---mg- ./---------
+κάτοιδα/v1sria--- νυκτέρων/a-p---ng- ὁμήγυριν/n-s---fa- ,/u-------- καὶ/c-------- τοὺς/l-p---ma- φέροντας/t-pppama- χεῖμα/n-s---na- καὶ/c-------- θέρος/n-s---na- βροτοῖς/n-p---md- λαμπροὺς/a-p---ma- δυνάστας/n-p---ma- ,/--------- ἐμπρέποντας/t-pppama- αἰθέρι/n-s---md- [ἀστέρας/n-p---ma- ,/--------- ὅταν/c-------- φθίνωσιν/v3ppsa--- ,/--------- ἀντολάς/n-p---fa- τε/g-------- τῶν]/p-p---mg- ./---------
 ```
 
 `pos_training_set.txt` is made for the purpose of being used with NLTK's `TaggedCorpusReader`.
