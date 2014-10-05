@@ -47,7 +47,7 @@ def get_tags():
         treebank_training_set.append(tagged_sentences)
     pos_training_set = '\n\n'.join(treebank_training_set)
 
-    with open('pos_training_set.txt', 'w') as f:
+    with open('pos_training_set.pos', 'w') as f:
         f.write(pos_training_set)
 
 
