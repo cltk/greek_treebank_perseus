@@ -1,5 +1,7 @@
 # About
 
+Note: For a full report on this tagger's accuracy, see ["CLTK POS tagging cross–validation"](http://kyle-p-johnson.com/blog/2014/12/31/cltk-pos-tagging-cross-validation.html).
+
 This repository contains treebanks for Ancient Greek from the [Ancient Greek Dependency Treebank, version 1.7](http://nlp.perseus.tufts.edu/syntax/treebank/).
 
 The file `make_pos_training_set.py` generates the training set `pos_training_set.txt`, which encodes part of speech data like so:
