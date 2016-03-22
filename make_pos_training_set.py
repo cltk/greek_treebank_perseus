@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 from cltk.corpus.greek.beta_to_unicode import Replacer
 from lxml import etree
 
@@ -31,7 +33,7 @@ def get_tags():
             form = form.lower()
 
             # rm nasty single quotes
-            form_list = [char for char in form if char not in ["'", '᾽', '’', '[', ']']]
+            form_list = [char for char in form if char not in [' ', "'", '᾽', '’', '[', ']']]
             form = ''.join(form_list)
 
             #lemma = word['lemma']
@@ -42,6 +44,8 @@ def get_tags():
             #deprel = word['head']
             #phead = '_'
             #pderprel = '_'
+            if len(form) == 0: continue
+
             word_tag = '/'.join([form, postag])
             sentence_list.append(word_tag)
         sentence_str = ' '.join(sentence_list)
