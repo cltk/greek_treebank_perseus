@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """Convert multiple XML treebanks into pos list of list of tuples of two strings.
 
 TODO: Correct any tuples that look like this: `('.', None)`. The None breaks the CRF tagger. This example arises
@@ -8,10 +7,9 @@ TODO: Remove all question marks (?).
 
 TODO: This is screwed up: `δαιμόνων/n-pἀντῴη---mg-`.
 
+TODO: Consider removing all "?" forms and all punct (at least commas) too.
+
 """
-=======
-# -*- coding: utf-8 -*- 
->>>>>>> d6c2e0af28f71a16c99964a75fa836631222e78e
 
 from cltk.corpus.greek.beta_to_unicode import Replacer
 from lxml import etree
